@@ -88,6 +88,6 @@ def run(rule: str, correct_digit: str) -> None:
             raise
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     click.echo(GAME_PROMPT)
     run()
