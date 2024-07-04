@@ -79,7 +79,8 @@ def run(rule: str) -> None:
     correct_digit = generate_correct_digit()
     while True:
         try:
-            check_user_guess_digit(input_digit(prompt), correct_digit)
+            if check_user_guess_digit(input_digit(prompt), correct_digit):
+                break
             prompt = "\nYour guess is not correct, please try again: "
         except (ValueError, TimeoutError) as e:
             click.echo(str(e))
