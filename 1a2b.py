@@ -70,7 +70,7 @@ def input_digit(prompt: str) -> str:
 
 @click.command()
 @click.option("--rule", is_flag=True, help="Display game rules.")
-def run(rule: str, correct_digit: str) -> None:
+def run(rule: str) -> None:
     if rule:
         click.echo(GAME_RULE)
         return
