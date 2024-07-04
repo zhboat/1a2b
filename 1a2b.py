@@ -28,10 +28,10 @@ def generate_correct_digit() -> str:
     return "".join(digit)
 
 
-def check_user_guess_digit(user_guess_digit: str, correct_digit: str) -> None:
+def check_user_guess_digit(user_guess_digit: str, correct_digit: str) -> bool:
     if user_guess_digit == correct_digit:
         click.echo("Congratulations! The %s is right!" % correct_digit)
-        return
+        return True
     elif len(user_guess_digit) != 4:
         raise ValueError("Length error!")
     elif len(user_guess_digit) > len(set(user_guess_digit)):
