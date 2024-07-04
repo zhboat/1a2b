@@ -20,7 +20,7 @@ GAME_PROMPT = (
     "to get the correct answer of the random number."
 )
 
-TIMEOUT = 120
+TIMEOUT = 240
 
 
 def generate_correct_digit() -> str:
