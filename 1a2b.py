@@ -75,13 +75,16 @@ def run(rule: str) -> None:
         click.echo(GAME_RULE)
         return
 
-    prompt = "\nPlease input your guess four-digit: "
+    counter = 0
+    prompt = "\nPlease input your guess four-digit"
     correct_digit = generate_correct_digit()
     while True:
         try:
             if check_user_guess_digit(input_digit(prompt), correct_digit):
                 break
-            prompt = "\nYour guess is not correct, please try again: "
+            counter += 1
+            prompt = "\nYou've tried %d times.\n" \
+                "Your guess is not correct, try again" % counter
         except (ValueError, TimeoutError) as e:
             click.echo(str(e))
             break
